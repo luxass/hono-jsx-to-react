@@ -1,0 +1,67 @@
+{
+  "name": "hono-jsx-to-react",
+  "version": "0.1.0",
+  "description": "A small library to convert Hono JSX to React JSX",
+  "type": "module",
+  "author": {
+    "name": "Lucas Nørgård",
+    "email": "lucasnrgaard@gmail.com",
+    "url": "https://luxass.dev"
+  },
+  "packageManager": "pnpm@9.8.0",
+  "license": "MIT",
+  "homepage": "https://github.com/luxass/hono-jsx-to-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxass/hono-jsx-to-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luxass/hono-jsx-to-react/issues"
+  },
+  "keywords": [
+    "hono",
+    "jsx",
+    "react"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "hono": ">=4"
+  },
+  "devDependencies": {
+    "@luxass/eslint-config": "^4.11.0",
+    "@types/node": "^18.19.39",
+    "eslint": "^9.9.1",
+    "eslint-plugin-format": "^0.1.2",
+    "hono": "^4.5.8",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
