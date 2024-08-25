@@ -1,3 +1,8 @@
+/**
+ * @module
+ * A small library to convert Hono JSX to React JSX
+ */
+
 import type { Child } from "hono/jsx";
 import type { HtmlEscapedString } from "hono/utils/html";
 
