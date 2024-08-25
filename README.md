@@ -15,7 +15,7 @@ npm install hono-jsx-to-react hono
 ```tsx
 import { toReactNode } from "hono-jsx-to-react";
 
-const element = <div> Hello World! </div>
+const element = <div> Hello World! </div>;
 console.log(toReactNode(element));
 // {
 //   type: "div",
