@@ -13,6 +13,17 @@ export interface ReactElement {
   key: string | null;
 }
 
+/**
+ * Converts Hono JSX elements to React-compatible elements.
+ *
+ * @template TJSX - The type of the input JSX element, extending Child.
+ * @template TReturnType - The return type, determined based on the input type.
+ *
+ * @param {TJSX} jsx - The Hono JSX element to convert.
+ * @returns {TReturnType} The converted React-compatible element.
+ *
+ * @throws {TypeError} If async components is used (not yet supported).
+ */
 export function toReactNode<
   const TJSX extends Child,
   TReturnType = TJSX extends HonoElement[]
@@ -21,18 +32,19 @@ export function toReactNode<
       ? ReactElement
       : TJSX,
 >(
-  jsx_: TJSX,
+  jsx: TJSX,
 ): TReturnType {
-  const jsx = jsx_ as Exclude<Child, Promise<string>>;
-
   if (!jsx) return null as TReturnType;
   if (Array.isArray(jsx)) {
-    return jsx.map(toReactNode) as TReturnType;
+    return jsx.map((child) => toReactNode(child)) as TReturnType;
   }
-
   if (typeof jsx === "string") return jsx as TReturnType;
   if (typeof jsx === "number") return jsx as TReturnType;
   if (typeof jsx === "boolean") return jsx as TReturnType;
+
+  if (typeof jsx === "object" && jsx instanceof Promise) {
+    throw new TypeError("Async Components is not yet supported");
+  }
 
   if (typeof jsx.tag === "function") {
     const node = jsx.tag({ ...jsx.props, children: jsx.children });
