@@ -2,8 +2,8 @@
 /** @jsxImportSource hono/jsx */
 /** @jsxFrag */
 
-import { describe, expect, it } from "vitest";
 import type { JSX } from "hono/jsx/jsx-runtime";
+import { describe, expect, it } from "vitest";
 import { toReactNode } from "../src";
 
 function TestComponent() {
