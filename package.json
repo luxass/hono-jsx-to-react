@@ -8,7 +8,7 @@
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@10.2.0",
   "license": "MIT",
   "homepage": "https://github.com/luxass/hono-jsx-to-react",
   "repository": {
@@ -55,13 +55,21 @@
     "hono": ">=4"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^4.12.1",
+    "@luxass/eslint-config": "^4.15.0",
     "@types/node": "^22.0.0",
-    "eslint": "^9.14.0",
-    "eslint-plugin-format": "^1.0.0",
-    "hono": "^4.6.8",
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.4"
+    "eslint": "^9.19.0",
+    "eslint-plugin-format": "^1.0.1",
+    "hono": "^4.6.20",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ],
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
