@@ -55,7 +55,7 @@
     "hono": ">=4"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^4.15.0",
+    "@luxass/eslint-config": "^5.0.0",
     "@types/node": "^22.0.0",
     "eslint": "^9.19.0",
     "eslint-plugin-format": "^1.0.1",
