@@ -26,26 +26,20 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "lint": "eslint .",
     "test": "vitest --run",
     "test:watch": "vitest",
@@ -60,7 +54,8 @@
     "eslint": "^9.35.0",
     "eslint-plugin-format": "^1.0.1",
     "hono": "^4.9.7",
-    "tsup": "^8.5.0",
+    "publint": "^0.3.12",
+    "tsdown": "^0.15.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
