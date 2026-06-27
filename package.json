@@ -59,7 +59,7 @@
     "hono": "4.12.21",
     "publint": "0.3.15",
     "tsdown": "0.16.1",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "4.0.8"
   },
   "pnpm": {
